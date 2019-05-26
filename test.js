@@ -312,15 +312,15 @@ const emails = [1, 2, 3];
   assert( match('/emails', '/emails/'));
   assert(!match('/emails', '/emails/1'));
 
-  deep(match('/emails/(id)', '/emails/123'), { id: '123' });
-  deep(match('/emails/(id)', '/emails/'), null);
-  deep(match('/emails/(from)/(to)', '/emails/me/you'), { from: 'me', to: 'you' });
+  deep(match('/emails/:id', '/emails/123'), { id: '123' });
+  deep(match('/emails/:id', '/emails/'), null);
+  deep(match('/emails/:from/:to', '/emails/me/you'), { from: 'me', to: 'you' });
 })();
 
 // Router with dynamic segments
 (async () => {
   let routes = min.router();
-  routes.get('/emails/(from)/(to)', async (ctx) => {
+  routes.get('/emails/:from/:to', async (ctx) => {
     return ctx.params;
   });
 

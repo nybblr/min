@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.19.0"
+  },
+  "dependencies": {
+    "path-to-regexp": "^3.0.0"
   }
 }
