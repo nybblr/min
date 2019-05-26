@@ -17,7 +17,7 @@ emailRoutes.get('/emails', async (ctx) =>
   json(emails)
 );
 
-emailRoutes.get('/emails/(id)', async (ctx) =>
+emailRoutes.get('/emails/:id', async (ctx) =>
   json(emails.find(email => email.id === ctx.params.id))
 );
 
