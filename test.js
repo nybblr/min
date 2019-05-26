@@ -163,7 +163,7 @@ const emails = [1, 2, 3];
 
   let response = await app(req, res);
 
-  deep(response, { status: 200, headers: {}, body: '[1,2,3]'} );
+  deep(response, { status: 200, headers: { 'Content-Type': 'application/json' }, body: '[1,2,3]'} );
 })();
 
 // With headers
@@ -171,8 +171,8 @@ const emails = [1, 2, 3];
   let app = min();
 
   app.use(async (ctx, next) =>
-    min.withHeaders(await next(ctx),
-      { 'Content-Type': 'application/json' }
+    min.withHeaders({ 'X-API-Version': '1.0' },
+      await next(ctx)
     )
   );
 
@@ -182,7 +182,7 @@ const emails = [1, 2, 3];
 
   let response = await app(req, res);
 
-  deep(response, { status: 200, headers: { 'Content-Type': 'application/json' }, body: '[1,2,3]'} );
+  deep(response, { status: 200, headers: { 'Content-Type': 'application/json', 'X-API-Version': '1.0' }, body: '[1,2,3]'} );
 })();
 
 // Substacks

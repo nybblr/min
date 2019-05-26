@@ -12,8 +12,8 @@ Expressions are an indicator of code quality: statements make it easy to mask si
 
 If you can build a non-trivial backend where 95% of the code is written with implicit returning arrow functions, you're on track to a robust codebase.
 
-- *Function* over *classes*: everything is a function. Because middleware is invokable with the same signature, a strict type hierarchy becomes unnecessary.
-- *Stacks* over *custom flow control*: JavaScript already has fantastic flow control with returns and exceptions. Why reimplement it?
+- *Functions* over *classes*: everything is a function. Because middleware is invokable with the same signature, a strict type hierarchy becomes unnecessary.
+- *Stacks* and *custom exceptions* over *custom flow control*: JavaScript already has fantastic flow control with returns and exceptions. Why reimplement it?
 - *Immutability* over *object reuse*: forces code to phrase work solely in terms of return value.
 - *Composition* over *inspection*: don't ask a middleware layer how it does its work so you can modify it: just invoke the layer and augment the return value.
 - *Return values* over *mutation*: the response is simply the return value.

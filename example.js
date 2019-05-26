@@ -6,8 +6,8 @@ const emails = [{ id: '1' }, { id: '2' }, { id: '3' }];
 let app = min();
 
 app.use(async (ctx, next) =>
-  withHeaders(await next(ctx),
-    { 'Content-Type': 'application/json' }
+  withHeaders({ 'X-API-Version': '1.0' },
+    await next(ctx)
   )
 );
 
