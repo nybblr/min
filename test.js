@@ -297,7 +297,7 @@ const emails = [1, 2, 3];
     req: { method: 'POST', url: '/emails' }, res
   })), res);
   deep(order, [1,3,4,6].sort());
-  
+
   order = [];
   eql((await app({
     req: { method: 'GET', url: '/users' }, res

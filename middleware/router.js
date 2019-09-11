@@ -37,7 +37,7 @@ let router = () => {
 
     let params = route === nullRoute ?
       {} : route.matcher(ctx.req.url);
-    
+
     return stack({ ...ctx, params },
       ctx => route.stack(ctx, next));
   };
